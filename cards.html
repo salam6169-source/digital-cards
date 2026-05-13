@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بطاقات السفر المصرفية</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    h1 { color: white; font-size: 2rem; margin-bottom: 40px; text-align: center; }
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .card {
+      border-radius: 20px;
+      padding: 35px 30px;
+      width: 300px;
+      color: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .visa-card { background: linear-gradient(135deg, #1a56db, #0f2d6b); }
+    .master-card { background: linear-gradient(135deg, #e74c3c, #8e1a0e); }
+    .icon { font-size: 48px; margin-bottom: 15px; }
+    h2 { font-size: 1.4rem; margin-bottom: 10px; }
+    p { opacity: 0.85; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
+    ul { padding-right: 20px; }
+    li { opacity: 0.9; font-size: 0.88rem; line-height: 2.2; }
+    .badge {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    a.back {
+      margin-top: 40px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 12px 30px;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>التطبيقات المصرفية للسفر</h1>
+  <div class="cards-container">
+    <div class="card visa-card">
+      <div class="icon">&#x2708;&#xFE0F;</div>
+      <h2>Visa Airport</h2>
+      <p>تطبيق فيزا للمطار - استمتع بامتيازات الصالات وخدمات السفر المميزة</p>
+      <ul>
+        <li>دخول مجاني لصالات المطارات</li>
+        <li>اولوية عند تسجيل الوصول</li>
+        <li>تامين السفر الشامل</li>
+        <li>خصومات على تذاكر الطيران</li>
+      </ul>
+      <div class="badge">VISA Airport Program</div>
+    </div>
+    <div class="card master-card">
+      <div class="icon">&#x1F30D;</div>
+      <h2>Mastercard Travel Pass</h2>
+      <p>تطبيق ماستركارد للسفر - رحلات مريحة بمزايا حصرية عالمية</p>
+      <ul>
+        <li>مكافات نقاط على كل معاملة</li>
+        <li>حماية الشراء والتامين</li>
+        <li>صرف عملات بافضل الاسعار</li>
+        <li>خدمة عملاء دولية 24/7</li>
+      </ul>
+      <div class="badge">Mastercard Travel Pass</div>
+    </div>
+  </div>
+  <a href="index.html" class="back">العودة للرئيسية</a>
+</body>
+</html>
