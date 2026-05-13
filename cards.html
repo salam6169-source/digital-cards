@@ -13,7 +13,7 @@
       direction: rtl;
     }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     header {
       background: linear-gradient(135deg, #1e3a8a, #7c3aed);
       padding: 30px 20px;
@@ -22,7 +22,7 @@
     header h1 { font-size: 2rem; color: white; margin-bottom: 8px; }
     header p { color: rgba(255,255,255,0.75); font-size: 1rem; }
 
-    /* ===== NAV ===== */
+    /* NAV */
     nav {
       background: #1e293b;
       display: flex;
@@ -39,24 +39,17 @@
       font-size: 0.9rem;
       transition: all 0.3s;
     }
-    nav a:hover, nav a.active {
-      background: #3b82f6;
-      color: white;
-    }
+    nav a:hover { background: #3b82f6; color: white; }
 
-    /* ===== SECTION TITLE ===== */
+    /* SECTION TITLE */
     .section-title {
       text-align: center;
       padding: 40px 20px 20px;
     }
-    .section-title h2 {
-      font-size: 1.6rem;
-      color: #f1f5f9;
-      margin-bottom: 8px;
-    }
+    .section-title h2 { font-size: 1.6rem; color: #f1f5f9; margin-bottom: 8px; }
     .section-title p { color: #94a3b8; font-size: 0.95rem; }
 
-    /* ===== CARDS SECTION ===== */
+    /* CARDS */
     .cards-container {
       display: flex;
       flex-wrap: wrap;
@@ -92,23 +85,16 @@
       font-size: 0.88rem;
     }
 
-    /* ===== STAFF CONTACT SECTION ===== */
+    /* STAFF SECTION */
     .staff-section {
       background: #1e293b;
-      margin: 40px 20px;
+      margin: 40px auto;
       border-radius: 20px;
       padding: 35px 30px;
       max-width: 1060px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .staff-section h2 {
-      font-size: 1.5rem;
-      color: #f1f5f9;
-      margin-bottom: 8px;
-      text-align: center;
-    }
-    .staff-section .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
+    .staff-section h2 { font-size: 1.5rem; color: #f1f5f9; margin-bottom: 8px; text-align: center; }
+    .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
     .staff-grid {
       display: flex;
       flex-wrap: wrap;
@@ -119,53 +105,75 @@
       background: #0f172a;
       border-radius: 14px;
       padding: 22px 20px;
-      width: 300px;
+      width: 290px;
       border: 1px solid #334155;
       transition: border-color 0.3s;
     }
     .staff-card:hover { border-color: #3b82f6; }
-    .staff-card .staff-bank {
+    .staff-bank {
       font-size: 0.78rem;
       font-weight: bold;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       padding: 4px 10px;
       border-radius: 20px;
       display: inline-block;
     }
     .visa-label { background: #1d4ed8; color: white; }
     .master-label { background: #dc2626; color: white; }
-    .staff-card h4 { font-size: 1rem; color: #e2e8f0; margin-bottom: 5px; }
-    .staff-card .role { color: #64748b; font-size: 0.82rem; margin-bottom: 14px; }
-    .staff-card .contact-info { display: flex; flex-direction: column; gap: 8px; }
+    .staff-card h4 {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: normal;
+      margin-bottom: 4px;
+    }
+    .staff-name-field {
+      background: #1e293b;
+      border: 1px dashed #334155;
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #475569;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+    .staff-role-field {
+      background: #1e293b;
+      border: 1px dashed #334155;
+      border-radius: 6px;
+      padding: 6px 12px;
+      color: #475569;
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 8px; }
     .contact-item {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 0.83rem;
-      color: #94a3b8;
     }
     .contact-item span.ci { font-size: 16px; }
+    .contact-field {
+      background: #1e293b;
+      border: 1px dashed #334155;
+      border-radius: 6px;
+      padding: 5px 10px;
+      color: #475569;
+      font-size: 0.82rem;
+      flex: 1;
+      font-style: italic;
+    }
 
-    /* ===== REQUIREMENTS ===== */
+    /* REQUIREMENTS */
     .req-section {
       max-width: 1060px;
       margin: 0 auto 40px;
       padding: 0 20px;
     }
-    .req-section h2 {
-      font-size: 1.5rem;
-      color: #f1f5f9;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .req-section .sub { color: #94a3b8; text-align: center; margin-bottom: 25px; font-size: 0.9rem; }
-    .req-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+    .req-section h2 { font-size: 1.5rem; color: #f1f5f9; text-align: center; margin-bottom: 8px; }
+    .req-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
     .req-card {
       background: #1e293b;
       border-radius: 14px;
@@ -178,21 +186,14 @@
     .req-card h4 { font-size: 1rem; margin-bottom: 15px; color: #e2e8f0; }
     .req-card ul { padding-right: 18px; }
     .req-card li { font-size: 0.85rem; color: #94a3b8; line-height: 2.1; }
-    .req-card li::marker { color: #3b82f6; }
 
-    /* ===== CUSTOMER SERVICE ===== */
+    /* CUSTOMER SERVICE */
     .cs-section {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       border-top: 1px solid #334155;
       padding: 50px 20px;
     }
-    .cs-section h2 {
-      font-size: 1.5rem;
-      color: #f1f5f9;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .cs-section .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
+    .cs-section h2 { font-size: 1.5rem; color: #f1f5f9; text-align: center; margin-bottom: 8px; }
     .cs-grid {
       display: flex;
       flex-wrap: wrap;
@@ -214,14 +215,18 @@
     .cs-card .cs-icon { font-size: 36px; margin-bottom: 12px; }
     .cs-card h4 { font-size: 0.95rem; color: #e2e8f0; margin-bottom: 6px; }
     .cs-card p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
-    .cs-card .cs-value {
+    .cs-value-field {
       margin-top: 10px;
-      font-size: 0.88rem;
-      color: #38bdf8;
-      font-weight: bold;
+      background: #1e293b;
+      border: 1px dashed #334155;
+      border-radius: 6px;
+      padding: 5px 8px;
+      color: #475569;
+      font-size: 0.82rem;
+      font-style: italic;
     }
 
-    /* ===== CONTACT FORM ===== */
+    /* CONTACT FORM */
     .contact-form {
       max-width: 600px;
       margin: 0 auto;
@@ -230,12 +235,7 @@
       border-radius: 16px;
       padding: 30px;
     }
-    .contact-form h3 {
-      font-size: 1.1rem;
-      color: #f1f5f9;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+    .contact-form h3 { font-size: 1.1rem; color: #f1f5f9; margin-bottom: 20px; text-align: center; }
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; }
     .form-group input,
@@ -254,10 +254,7 @@
     .form-group textarea { height: 100px; resize: vertical; }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #3b82f6;
-    }
+    .form-group textarea:focus { outline: none; border-color: #3b82f6; }
     .submit-btn {
       width: 100%;
       background: linear-gradient(135deg, #3b82f6, #7c3aed);
@@ -272,7 +269,7 @@
     }
     .submit-btn:hover { opacity: 0.85; }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     footer {
       background: #020617;
       text-align: center;
@@ -293,7 +290,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#cards" class="active">البطاقات</a>
+  <a href="#cards">البطاقات</a>
   <a href="#staff">التواصل مع الموظفين</a>
   <a href="#requirements">متطلبات الاصدار</a>
   <a href="#support">خدمة العملاء</a>
@@ -316,7 +313,7 @@
         <li>اولوية عند تسجيل الوصول</li>
         <li>تامين السفر الشامل</li>
         <li>خصومات على تذاكر الطيران</li>
-        <li>خدمة التوصيل من وإلى المطار</li>
+        <li>خدمة التوصيل من واالى المطار</li>
       </ul>
       <div class="badge">VISA &#x2726; Airport Program</div>
     </div>
@@ -342,51 +339,63 @@
   <p class="sub">تواصل مع المختصين المعتمدين لاصدار بطاقتك</p>
   <div class="staff-grid">
 
+    <!-- موظف فيزا 1 -->
     <div class="staff-card">
       <span class="staff-bank visa-label">VISA Airport</span>
-      <h4>احمد العمري</h4>
-      <p class="role">مختص بطاقات فيزا المطار - الفرع الرئيسي</p>
+      <h4>الاسم</h4>
+      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4>
+      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
-        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920001234</div>
-        <div class="contact-item"><span class="ci">&#x1F4E7;</span> ahmed.visa@bank.com</div>
-        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0501234567</div>
-        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span><div class="contact-field">رقم الواتساب</div></div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
 
+    <!-- موظف فيزا 2 -->
     <div class="staff-card">
       <span class="staff-bank visa-label">VISA Airport</span>
-      <h4>سارة المطيري</h4>
-      <p class="role">مستشارة خدمات السفر - بطاقات فيزا</p>
+      <h4>الاسم</h4>
+      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4>
+      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
-        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920001235</div>
-        <div class="contact-item"><span class="ci">&#x1F4E7;</span> sara.visa@bank.com</div>
-        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0507654321</div>
-        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span><div class="contact-field">رقم الواتساب</div></div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
 
+    <!-- موظف ماستركارد 1 -->
     <div class="staff-card">
       <span class="staff-bank master-label">Mastercard</span>
-      <h4>خالد الشمري</h4>
-      <p class="role">مختص Mastercard Travel Pass - الفرع الرئيسي</p>
+      <h4>الاسم</h4>
+      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4>
+      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
-        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920005678</div>
-        <div class="contact-item"><span class="ci">&#x1F4E7;</span> khalid.mc@bank.com</div>
-        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0509876543</div>
-        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span><div class="contact-field">رقم الواتساب</div></div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
 
+    <!-- موظف ماستركارد 2 -->
     <div class="staff-card">
       <span class="staff-bank master-label">Mastercard</span>
-      <h4>نورة القحطاني</h4>
-      <p class="role">مستشارة Mastercard للاعمال والسفر</p>
+      <h4>الاسم</h4>
+      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4>
+      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
-        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920005679</div>
-        <div class="contact-item"><span class="ci">&#x1F4E7;</span> noura.mc@bank.com</div>
-        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0503456789</div>
-        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span><div class="contact-field">رقم الواتساب</div></div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
 
@@ -395,10 +404,11 @@
 
 <!-- REQUIREMENTS -->
 <div id="requirements" class="req-section">
-  <h2>&#x1F4CB; متطلبات اصدار البطاقات</h2>
-  <p class="sub">احضر هذه الوثائق عند التقديم للحصول على بطاقتك بسرعة</p>
+  <div class="section-title">
+    <h2>&#x1F4CB; متطلبات اصدار البطاقات</h2>
+    <p class="sub">احضر هذه الوثائق عند التقديم للحصول على بطاقتك بسرعة</p>
+  </div>
   <div class="req-grid">
-
     <div class="req-card visa-req">
       <h4>&#x2708;&#xFE0F; متطلبات Visa Airport</h4>
       <ul>
@@ -406,12 +416,11 @@
         <li>تصريح الاقامة (للمقيمين)</li>
         <li>كشف حساب بنكي (3 اشهر)</li>
         <li>شهادة راتب او عمل حر</li>
-        <li>حد ادنى للراتب: 5,000 ريال</li>
+        <li>الحد الادنى للراتب: يحدد لاحقاً</li>
         <li>عمر لا يقل عن 21 سنة</li>
         <li>صورة شخصية حديثة</li>
       </ul>
     </div>
-
     <div class="req-card master-req">
       <h4>&#x1F30D; متطلبات Mastercard Travel Pass</h4>
       <ul>
@@ -419,44 +428,43 @@
         <li>تصريح الاقامة (للمقيمين)</li>
         <li>كشف حساب بنكي (6 اشهر)</li>
         <li>شهادة راتب او اثبات دخل</li>
-        <li>حد ادنى للراتب: 8,000 ريال</li>
+        <li>الحد الادنى للراتب: يحدد لاحقاً</li>
         <li>عمر لا يقل عن 21 سنة</li>
         <li>جواز سفر ساري (للبطاقة الدولية)</li>
       </ul>
     </div>
-
   </div>
 </div>
 
 <!-- CUSTOMER SERVICE -->
 <div id="support" class="cs-section">
   <h2>&#x1F3AF; خدمة العملاء</h2>
-  <p class="sub">نحن هنا لمساعدتك على مدار الساعة - تواصل معنا بالطريقة التي تناسبك</p>
+  <p class="sub">نحن هنا لمساعدتك - تواصل معنا بالطريقة التي تناسبك</p>
 
   <div class="cs-grid">
     <div class="cs-card">
       <div class="cs-icon">&#x1F4DE;</div>
       <h4>الهاتف</h4>
       <p>اتصل بنا مباشرة</p>
-      <div class="cs-value">920000000</div>
+      <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4AC;</div>
       <h4>واتساب</h4>
       <p>راسلنا في اي وقت</p>
-      <div class="cs-value">0500000000</div>
+      <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4E7;</div>
       <h4>البريد الالكتروني</h4>
       <p>نرد خلال 24 ساعة</p>
-      <div class="cs-value">support@bank.com</div>
+      <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4CD;</div>
       <h4>زيارة الفرع</h4>
-      <p>احجز موعدك مسبقا</p>
-      <div class="cs-value">اوقات: 8ص - 5م</div>
+      <p>احجز موعدك مسبقاً</p>
+      <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
   </div>
 
