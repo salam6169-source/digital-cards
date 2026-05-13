@@ -6,181 +6,83 @@
   <title>بطاقات السفر المصرفية - خدمة العملاء</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      direction: rtl;
-    }
+    body { font-family: Arial, sans-serif; background: #0f172a; color: #e2e8f0; direction: rtl; }
 
     /* HEADER */
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #7c3aed);
-      padding: 30px 20px;
-      text-align: center;
-    }
+    header { background: linear-gradient(135deg, #1e3a8a, #7c3aed); padding: 30px 20px; text-align: center; }
     header h1 { font-size: 2rem; color: white; margin-bottom: 8px; }
     header p { color: rgba(255,255,255,0.75); font-size: 1rem; }
 
     /* NAV */
-    nav {
-      background: #1e293b;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #94a3b8;
-      text-decoration: none;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-    }
+    nav { background: #1e293b; display: flex; justify-content: center; gap: 10px; padding: 12px; flex-wrap: wrap; }
+    nav a { color: #94a3b8; text-decoration: none; padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s; }
     nav a:hover { background: #3b82f6; color: white; }
 
     /* SECTION TITLE */
-    .section-title {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
+    .section-title { text-align: center; padding: 40px 20px 20px; }
     .section-title h2 { font-size: 1.6rem; color: #f1f5f9; margin-bottom: 8px; }
     .section-title p { color: #94a3b8; font-size: 0.95rem; }
 
     /* CARDS */
-    .cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      padding: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .bank-card {
-      border-radius: 20px;
-      padding: 30px 25px;
-      width: 310px;
-      color: white;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
+    .cards-container { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; padding: 20px; max-width: 1100px; margin: 0 auto; }
+    .bank-card { border-radius: 20px; padding: 30px 25px; width: 330px; color: white; box-shadow: 0 15px 40px rgba(0,0,0,0.4); transition: transform 0.3s; }
     .bank-card:hover { transform: translateY(-6px); }
     .visa-card { background: linear-gradient(135deg, #1d4ed8, #1e3a8a); }
     .master-card { background: linear-gradient(135deg, #dc2626, #7f1d1d); }
     .icon { font-size: 40px; margin-bottom: 12px; }
     .bank-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
     .bank-card p { opacity: 0.85; font-size: 0.88rem; margin-bottom: 15px; line-height: 1.6; }
-    .bank-card ul { padding-right: 18px; }
+    .bank-card ul { padding-right: 18px; margin-bottom: 20px; }
     .bank-card li { font-size: 0.85rem; line-height: 2.1; opacity: 0.9; }
-    .badge {
-      background: rgba(255,255,255,0.2);
-      border-radius: 8px;
-      padding: 8px;
-      text-align: center;
-      margin-top: 15px;
-      font-weight: bold;
-      font-size: 0.88rem;
-    }
+    .badge { background: rgba(255,255,255,0.2); border-radius: 8px; padding: 8px; text-align: center; margin-bottom: 18px; font-weight: bold; font-size: 0.88rem; }
 
-    /* STAFF SECTION */
-    .staff-section {
-      background: #1e293b;
-      margin: 40px auto;
-      border-radius: 20px;
-      padding: 35px 30px;
-      max-width: 1060px;
-    }
-    .staff-section h2 { font-size: 1.5rem; color: #f1f5f9; margin-bottom: 8px; text-align: center; }
-    .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
-    .staff-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .staff-card {
-      background: #0f172a;
-      border-radius: 14px;
-      padding: 22px 20px;
-      width: 290px;
-      border: 1px solid #334155;
-      transition: border-color 0.3s;
-    }
-    .staff-card:hover { border-color: #3b82f6; }
-    .staff-bank {
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      display: inline-block;
-    }
-    .visa-label { background: #1d4ed8; color: white; }
-    .master-label { background: #dc2626; color: white; }
-    .staff-card h4 {
-      font-size: 0.85rem;
-      color: #64748b;
-      font-weight: normal;
-      margin-bottom: 4px;
-    }
-    .staff-name-field {
-      background: #1e293b;
-      border: 1px dashed #334155;
-      border-radius: 6px;
-      padding: 8px 12px;
-      color: #475569;
-      font-size: 0.88rem;
-      margin-bottom: 6px;
-      font-style: italic;
-    }
-    .staff-role-field {
-      background: #1e293b;
-      border: 1px dashed #334155;
-      border-radius: 6px;
-      padding: 6px 12px;
-      color: #475569;
-      font-size: 0.82rem;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-    .contact-info { display: flex; flex-direction: column; gap: 8px; }
-    .contact-item {
+    /* DOWNLOAD BUTTONS */
+    .download-section { display: flex; flex-direction: column; gap: 10px; }
+    .download-label { font-size: 0.8rem; opacity: 0.75; margin-bottom: 4px; text-align: center; }
+    .store-btn {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.83rem;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 10px 16px;
+      color: white;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
     }
+    .store-btn:hover { background: rgba(255,255,255,0.28); transform: scale(1.03); }
+    .store-btn .store-icon { font-size: 20px; }
+    .store-btn .store-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .store-btn .store-sub { font-size: 0.72rem; font-weight: normal; opacity: 0.85; }
+    .store-btn .store-name { font-size: 0.92rem; }
+
+    /* STAFF SECTION */
+    .staff-section { background: #1e293b; margin: 40px auto; border-radius: 20px; padding: 35px 30px; max-width: 1060px; }
+    .staff-section h2 { font-size: 1.5rem; color: #f1f5f9; margin-bottom: 8px; text-align: center; }
+    .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
+    .staff-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .staff-card { background: #0f172a; border-radius: 14px; padding: 22px 20px; width: 290px; border: 1px solid #334155; transition: border-color 0.3s; }
+    .staff-card:hover { border-color: #3b82f6; }
+    .staff-bank { font-size: 0.78rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 14px; padding: 4px 10px; border-radius: 20px; display: inline-block; }
+    .visa-label { background: #1d4ed8; color: white; }
+    .master-label { background: #dc2626; color: white; }
+    .staff-card h4 { font-size: 0.85rem; color: #64748b; font-weight: normal; margin-bottom: 4px; }
+    .staff-name-field { background: #1e293b; border: 1px dashed #334155; border-radius: 6px; padding: 8px 12px; color: #475569; font-size: 0.88rem; margin-bottom: 6px; font-style: italic; }
+    .staff-role-field { background: #1e293b; border: 1px dashed #334155; border-radius: 6px; padding: 6px 12px; color: #475569; font-size: 0.82rem; margin-bottom: 16px; font-style: italic; }
+    .contact-info { display: flex; flex-direction: column; gap: 8px; }
+    .contact-item { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; }
     .contact-item span.ci { font-size: 16px; }
-    .contact-field {
-      background: #1e293b;
-      border: 1px dashed #334155;
-      border-radius: 6px;
-      padding: 5px 10px;
-      color: #475569;
-      font-size: 0.82rem;
-      flex: 1;
-      font-style: italic;
-    }
+    .contact-field { background: #1e293b; border: 1px dashed #334155; border-radius: 6px; padding: 5px 10px; color: #475569; font-size: 0.82rem; flex: 1; font-style: italic; }
 
     /* REQUIREMENTS */
-    .req-section {
-      max-width: 1060px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-    }
+    .req-section { max-width: 1060px; margin: 0 auto 40px; padding: 0 20px; }
     .req-section h2 { font-size: 1.5rem; color: #f1f5f9; text-align: center; margin-bottom: 8px; }
     .req-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .req-card {
-      background: #1e293b;
-      border-radius: 14px;
-      padding: 25px;
-      width: 320px;
-      border-right: 4px solid;
-    }
+    .req-card { background: #1e293b; border-radius: 14px; padding: 25px; width: 320px; border-right: 4px solid; }
     .req-card.visa-req { border-color: #3b82f6; }
     .req-card.master-req { border-color: #ef4444; }
     .req-card h4 { font-size: 1rem; margin-bottom: 15px; color: #e2e8f0; }
@@ -188,95 +90,29 @@
     .req-card li { font-size: 0.85rem; color: #94a3b8; line-height: 2.1; }
 
     /* CUSTOMER SERVICE */
-    .cs-section {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-top: 1px solid #334155;
-      padding: 50px 20px;
-    }
+    .cs-section { background: linear-gradient(135deg, #0f172a, #1e293b); border-top: 1px solid #334155; padding: 50px 20px; }
     .cs-section h2 { font-size: 1.5rem; color: #f1f5f9; text-align: center; margin-bottom: 8px; }
-    .cs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      max-width: 900px;
-      margin: 0 auto 35px;
-    }
-    .cs-card {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 25px 20px;
-      width: 200px;
-      text-align: center;
-      transition: transform 0.3s, border-color 0.3s;
-    }
+    .cs-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; margin: 0 auto 35px; }
+    .cs-card { background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 25px 20px; width: 200px; text-align: center; transition: transform 0.3s, border-color 0.3s; }
     .cs-card:hover { transform: translateY(-4px); border-color: #3b82f6; }
     .cs-card .cs-icon { font-size: 36px; margin-bottom: 12px; }
     .cs-card h4 { font-size: 0.95rem; color: #e2e8f0; margin-bottom: 6px; }
     .cs-card p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
-    .cs-value-field {
-      margin-top: 10px;
-      background: #1e293b;
-      border: 1px dashed #334155;
-      border-radius: 6px;
-      padding: 5px 8px;
-      color: #475569;
-      font-size: 0.82rem;
-      font-style: italic;
-    }
+    .cs-value-field { margin-top: 10px; background: #1e293b; border: 1px dashed #334155; border-radius: 6px; padding: 5px 8px; color: #475569; font-size: 0.82rem; font-style: italic; }
 
     /* CONTACT FORM */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 30px;
-    }
+    .contact-form { max-width: 600px; margin: 0 auto; background: #0f172a; border: 1px solid #334155; border-radius: 16px; padding: 30px; }
     .contact-form h3 { font-size: 1.1rem; color: #f1f5f9; margin-bottom: 20px; text-align: center; }
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: #e2e8f0;
-      font-size: 0.88rem;
-      font-family: Arial, sans-serif;
-      direction: rtl;
-    }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 10px 14px; color: #e2e8f0; font-size: 0.88rem; font-family: Arial, sans-serif; direction: rtl; }
     .form-group textarea { height: 100px; resize: vertical; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { outline: none; border-color: #3b82f6; }
-    .submit-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #3b82f6, #7c3aed);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: opacity 0.3s;
-    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #3b82f6; }
+    .submit-btn { width: 100%; background: linear-gradient(135deg, #3b82f6, #7c3aed); color: white; border: none; padding: 12px; border-radius: 8px; font-size: 0.95rem; cursor: pointer; margin-top: 8px; transition: opacity 0.3s; }
     .submit-btn:hover { opacity: 0.85; }
 
     /* FOOTER */
-    footer {
-      background: #020617;
-      text-align: center;
-      padding: 20px;
-      color: #475569;
-      font-size: 0.82rem;
-    }
+    footer { background: #020617; text-align: center; padding: 20px; color: #475569; font-size: 0.82rem; }
     footer a { color: #3b82f6; text-decoration: none; }
   </style>
 </head>
@@ -291,6 +127,7 @@
 <!-- NAV -->
 <nav>
   <a href="#cards">البطاقات</a>
+  <a href="#download">تحميل التطبيقات</a>
   <a href="#staff">التواصل مع الموظفين</a>
   <a href="#requirements">متطلبات الاصدار</a>
   <a href="#support">خدمة العملاء</a>
@@ -313,9 +150,26 @@
         <li>اولوية عند تسجيل الوصول</li>
         <li>تامين السفر الشامل</li>
         <li>خصومات على تذاكر الطيران</li>
-        <li>خدمة التوصيل من واالى المطار</li>
+        <li>خدمة التوصيل من والى المطار</li>
       </ul>
       <div class="badge">VISA &#x2726; Airport Program</div>
+      <div class="download-label">حمّل تطبيق Visa Airport</div>
+      <div class="download-section">
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.dragonpass.en.latam&pcampaignid=web_share" target="_blank" rel="noopener">
+          <span class="store-icon">&#x1F4F1;</span>
+          <span class="store-text">
+            <span class="store-sub">تحميل من</span>
+            <span class="store-name">Google Play</span>
+          </span>
+        </a>
+        <a class="store-btn" href="https://apps.apple.com/us/app/visa-airport-companion/id1291608009?l=ar" target="_blank" rel="noopener">
+          <span class="store-icon">&#xF8FF;</span>
+          <span class="store-text">
+            <span class="store-sub">تحميل من</span>
+            <span class="store-name">App Store</span>
+          </span>
+        </a>
+      </div>
     </div>
     <div class="bank-card master-card">
       <div class="icon">&#x1F30D;</div>
@@ -329,7 +183,85 @@
         <li>استرداد نقدي على مشتريات السفر</li>
       </ul>
       <div class="badge">Mastercard &#x2726; Travel Pass</div>
+      <div class="download-label">حمّل تطبيق Mastercard Travel Pass</div>
+      <div class="download-section">
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.dragonpass.en.mcmea&pcampaignid=web_share" target="_blank" rel="noopener">
+          <span class="store-icon">&#x1F4F1;</span>
+          <span class="store-text">
+            <span class="store-sub">تحميل من</span>
+            <span class="store-name">Google Play</span>
+          </span>
+        </a>
+        <a class="store-btn" href="https://apps.apple.com/sa/app/mastercard-travel-pass/id1493489553?l=ar" target="_blank" rel="noopener">
+          <span class="store-icon">&#xF8FF;</span>
+          <span class="store-text">
+            <span class="store-sub">تحميل من</span>
+            <span class="store-name">App Store</span>
+          </span>
+        </a>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD SECTION -->
+<div id="download" style="background:#1e293b; margin:40px auto; border-radius:20px; padding:35px 30px; max-width:1060px;">
+  <div class="section-title" style="padding:0 0 25px 0;">
+    <h2>&#x1F4E5; روابط تحميل التطبيقات</h2>
+    <p>حمّل التطبيق المناسب لجهازك مباشرة</p>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
+
+    <!-- Visa Download Card -->
+    <div style="background:#0f172a; border:1px solid #334155; border-radius:16px; padding:25px; width:320px; text-align:center;">
+      <div style="font-size:36px; margin-bottom:10px;">&#x2708;&#xFE0F;</div>
+      <h3 style="color:#60a5fa; margin-bottom:6px;">Visa Airport</h3>
+      <p style="color:#64748b; font-size:0.85rem; margin-bottom:20px;">Visa Airport Companion</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="https://play.google.com/store/apps/details?id=com.dragonpass.en.latam&pcampaignid=web_share" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; background:#166534; border-radius:10px; padding:12px 16px; color:white; text-decoration:none; font-size:0.9rem; transition:opacity 0.3s;">
+          <span style="font-size:22px;">&#x1F4F1;</span>
+          <span>
+            <div style="font-size:0.72rem; opacity:0.8;">Android - Samsung</div>
+            <div style="font-weight:bold;">Google Play</div>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/us/app/visa-airport-companion/id1291608009?l=ar" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; background:#1d4ed8; border-radius:10px; padding:12px 16px; color:white; text-decoration:none; font-size:0.9rem; transition:opacity 0.3s;">
+          <span style="font-size:22px;">&#xF8FF;</span>
+          <span>
+            <div style="font-size:0.72rem; opacity:0.8;">iPhone - iPad</div>
+            <div style="font-weight:bold;">App Store</div>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mastercard Download Card -->
+    <div style="background:#0f172a; border:1px solid #334155; border-radius:16px; padding:25px; width:320px; text-align:center;">
+      <div style="font-size:36px; margin-bottom:10px;">&#x1F30D;</div>
+      <h3 style="color:#f87171; margin-bottom:6px;">Mastercard Travel Pass</h3>
+      <p style="color:#64748b; font-size:0.85rem; margin-bottom:20px;">Mastercard Travel Pass</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="https://play.google.com/store/apps/details?id=com.dragonpass.en.mcmea&pcampaignid=web_share" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; background:#166534; border-radius:10px; padding:12px 16px; color:white; text-decoration:none; font-size:0.9rem; transition:opacity 0.3s;">
+          <span style="font-size:22px;">&#x1F4F1;</span>
+          <span>
+            <div style="font-size:0.72rem; opacity:0.8;">Android - Samsung</div>
+            <div style="font-weight:bold;">Google Play</div>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/sa/app/mastercard-travel-pass/id1493489553?l=ar" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; justify-content:center; gap:10px; background:#1d4ed8; border-radius:10px; padding:12px 16px; color:white; text-decoration:none; font-size:0.9rem; transition:opacity 0.3s;">
+          <span style="font-size:22px;">&#xF8FF;</span>
+          <span>
+            <div style="font-size:0.72rem; opacity:0.8;">iPhone - iPad</div>
+            <div style="font-weight:bold;">App Store</div>
+          </span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -338,14 +270,10 @@
   <h2>&#x1F464; التواصل مع موظفي البنوك</h2>
   <p class="sub">تواصل مع المختصين المعتمدين لاصدار بطاقتك</p>
   <div class="staff-grid">
-
-    <!-- موظف فيزا 1 -->
     <div class="staff-card">
       <span class="staff-bank visa-label">VISA Airport</span>
-      <h4>الاسم</h4>
-      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
-      <h4>المسمى الوظيفي</h4>
-      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
+      <h4>الاسم</h4><div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4><div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
         <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
         <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
@@ -353,14 +281,10 @@
         <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
-
-    <!-- موظف فيزا 2 -->
     <div class="staff-card">
       <span class="staff-bank visa-label">VISA Airport</span>
-      <h4>الاسم</h4>
-      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
-      <h4>المسمى الوظيفي</h4>
-      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
+      <h4>الاسم</h4><div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4><div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
         <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
         <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
@@ -368,14 +292,10 @@
         <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
-
-    <!-- موظف ماستركارد 1 -->
     <div class="staff-card">
       <span class="staff-bank master-label">Mastercard</span>
-      <h4>الاسم</h4>
-      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
-      <h4>المسمى الوظيفي</h4>
-      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
+      <h4>الاسم</h4><div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4><div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
         <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
         <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
@@ -383,14 +303,10 @@
         <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
-
-    <!-- موظف ماستركارد 2 -->
     <div class="staff-card">
       <span class="staff-bank master-label">Mastercard</span>
-      <h4>الاسم</h4>
-      <div class="staff-name-field">سيتم الاضافة لاحقاً</div>
-      <h4>المسمى الوظيفي</h4>
-      <div class="staff-role-field">سيتم الاضافة لاحقاً</div>
+      <h4>الاسم</h4><div class="staff-name-field">سيتم الاضافة لاحقاً</div>
+      <h4>المسمى الوظيفي</h4><div class="staff-role-field">سيتم الاضافة لاحقاً</div>
       <div class="contact-info">
         <div class="contact-item"><span class="ci">&#x1F4DE;</span><div class="contact-field">رقم الهاتف</div></div>
         <div class="contact-item"><span class="ci">&#x1F4E7;</span><div class="contact-field">البريد الالكتروني</div></div>
@@ -398,7 +314,6 @@
         <div class="contact-item"><span class="ci">&#x1F553;</span><div class="contact-field">اوقات العمل</div></div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -440,49 +355,33 @@
 <div id="support" class="cs-section">
   <h2>&#x1F3AF; خدمة العملاء</h2>
   <p class="sub">نحن هنا لمساعدتك - تواصل معنا بالطريقة التي تناسبك</p>
-
   <div class="cs-grid">
     <div class="cs-card">
       <div class="cs-icon">&#x1F4DE;</div>
-      <h4>الهاتف</h4>
-      <p>اتصل بنا مباشرة</p>
+      <h4>الهاتف</h4><p>اتصل بنا مباشرة</p>
       <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4AC;</div>
-      <h4>واتساب</h4>
-      <p>راسلنا في اي وقت</p>
+      <h4>واتساب</h4><p>راسلنا في اي وقت</p>
       <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4E7;</div>
-      <h4>البريد الالكتروني</h4>
-      <p>نرد خلال 24 ساعة</p>
+      <h4>البريد الالكتروني</h4><p>نرد خلال 24 ساعة</p>
       <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
     <div class="cs-card">
       <div class="cs-icon">&#x1F4CD;</div>
-      <h4>زيارة الفرع</h4>
-      <p>احجز موعدك مسبقاً</p>
+      <h4>زيارة الفرع</h4><p>احجز موعدك مسبقاً</p>
       <div class="cs-value-field">سيتم الاضافة لاحقاً</div>
     </div>
   </div>
-
-  <!-- CONTACT FORM -->
   <div class="contact-form">
     <h3>&#x1F4DD; ارسل استفسارك مباشرة</h3>
-    <div class="form-group">
-      <label>الاسم الكامل</label>
-      <input type="text" placeholder="ادخل اسمك الكامل">
-    </div>
-    <div class="form-group">
-      <label>رقم الجوال</label>
-      <input type="tel" placeholder="05XXXXXXXX">
-    </div>
-    <div class="form-group">
-      <label>البريد الالكتروني</label>
-      <input type="email" placeholder="example@email.com">
-    </div>
+    <div class="form-group"><label>الاسم الكامل</label><input type="text" placeholder="ادخل اسمك الكامل"></div>
+    <div class="form-group"><label>رقم الجوال</label><input type="tel" placeholder="05XXXXXXXX"></div>
+    <div class="form-group"><label>البريد الالكتروني</label><input type="email" placeholder="example@email.com"></div>
     <div class="form-group">
       <label>نوع البطاقة المطلوبة</label>
       <select>
@@ -503,10 +402,7 @@
         <option>اخرى</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>رسالتك</label>
-      <textarea placeholder="اكتب استفسارك او طلبك هنا..."></textarea>
-    </div>
+    <div class="form-group"><label>رسالتك</label><textarea placeholder="اكتب استفسارك او طلبك هنا..."></textarea></div>
     <button class="submit-btn">&#x1F4E8; ارسال الاستفسار</button>
   </div>
 </div>
