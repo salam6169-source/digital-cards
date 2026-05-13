@@ -3,88 +3,510 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بطاقات السفر المصرفية</title>
+  <title>بطاقات السفر المصرفية - خدمة العملاء</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      background: #0f172a;
+      color: #e2e8f0;
+      direction: rtl;
     }
-    h1 { color: white; font-size: 2rem; margin-bottom: 40px; text-align: center; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; color: white; margin-bottom: 8px; }
+    header p { color: rgba(255,255,255,0.75); font-size: 1rem; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: #1e293b;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    .section-title h2 {
+      font-size: 1.6rem;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+    .section-title p { color: #94a3b8; font-size: 0.95rem; }
+
+    /* ===== CARDS SECTION ===== */
     .cards-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 25px;
       justify-content: center;
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .card {
+    .bank-card {
       border-radius: 20px;
-      padding: 35px 30px;
-      width: 300px;
+      padding: 30px 25px;
+      width: 310px;
       color: white;
       box-shadow: 0 15px 40px rgba(0,0,0,0.4);
       transition: transform 0.3s;
     }
-    .card:hover { transform: translateY(-8px); }
-    .visa-card { background: linear-gradient(135deg, #1a56db, #0f2d6b); }
-    .master-card { background: linear-gradient(135deg, #e74c3c, #8e1a0e); }
-    .icon { font-size: 48px; margin-bottom: 15px; }
-    h2 { font-size: 1.4rem; margin-bottom: 10px; }
-    p { opacity: 0.85; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
-    ul { padding-right: 20px; }
-    li { opacity: 0.9; font-size: 0.88rem; line-height: 2.2; }
+    .bank-card:hover { transform: translateY(-6px); }
+    .visa-card { background: linear-gradient(135deg, #1d4ed8, #1e3a8a); }
+    .master-card { background: linear-gradient(135deg, #dc2626, #7f1d1d); }
+    .icon { font-size: 40px; margin-bottom: 12px; }
+    .bank-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .bank-card p { opacity: 0.85; font-size: 0.88rem; margin-bottom: 15px; line-height: 1.6; }
+    .bank-card ul { padding-right: 18px; }
+    .bank-card li { font-size: 0.85rem; line-height: 2.1; opacity: 0.9; }
     .badge {
       background: rgba(255,255,255,0.2);
-      border-radius: 10px;
-      padding: 10px;
+      border-radius: 8px;
+      padding: 8px;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 0.88rem;
+    }
+
+    /* ===== STAFF CONTACT SECTION ===== */
+    .staff-section {
+      background: #1e293b;
+      margin: 40px 20px;
+      border-radius: 20px;
+      padding: 35px 30px;
+      max-width: 1060px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .staff-section h2 {
+      font-size: 1.5rem;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .staff-section .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
+    .staff-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .staff-card {
+      background: #0f172a;
+      border-radius: 14px;
+      padding: 22px 20px;
+      width: 300px;
+      border: 1px solid #334155;
+      transition: border-color 0.3s;
+    }
+    .staff-card:hover { border-color: #3b82f6; }
+    .staff-card .staff-bank {
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .visa-label { background: #1d4ed8; color: white; }
+    .master-label { background: #dc2626; color: white; }
+    .staff-card h4 { font-size: 1rem; color: #e2e8f0; margin-bottom: 5px; }
+    .staff-card .role { color: #64748b; font-size: 0.82rem; margin-bottom: 14px; }
+    .staff-card .contact-info { display: flex; flex-direction: column; gap: 8px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: #94a3b8;
+    }
+    .contact-item span.ci { font-size: 16px; }
+
+    /* ===== REQUIREMENTS ===== */
+    .req-section {
+      max-width: 1060px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .req-section h2 {
+      font-size: 1.5rem;
+      color: #f1f5f9;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .req-section .sub { color: #94a3b8; text-align: center; margin-bottom: 25px; font-size: 0.9rem; }
+    .req-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .req-card {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 25px;
+      width: 320px;
+      border-right: 4px solid;
+    }
+    .req-card.visa-req { border-color: #3b82f6; }
+    .req-card.master-req { border-color: #ef4444; }
+    .req-card h4 { font-size: 1rem; margin-bottom: 15px; color: #e2e8f0; }
+    .req-card ul { padding-right: 18px; }
+    .req-card li { font-size: 0.85rem; color: #94a3b8; line-height: 2.1; }
+    .req-card li::marker { color: #3b82f6; }
+
+    /* ===== CUSTOMER SERVICE ===== */
+    .cs-section {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-top: 1px solid #334155;
+      padding: 50px 20px;
+    }
+    .cs-section h2 {
+      font-size: 1.5rem;
+      color: #f1f5f9;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .cs-section .sub { color: #94a3b8; text-align: center; margin-bottom: 30px; font-size: 0.9rem; }
+    .cs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto 35px;
+    }
+    .cs-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 25px 20px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .cs-card:hover { transform: translateY(-4px); border-color: #3b82f6; }
+    .cs-card .cs-icon { font-size: 36px; margin-bottom: 12px; }
+    .cs-card h4 { font-size: 0.95rem; color: #e2e8f0; margin-bottom: 6px; }
+    .cs-card p { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
+    .cs-card .cs-value {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: #38bdf8;
       font-weight: bold;
     }
-    a.back {
-      margin-top: 40px;
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 12px 30px;
-      border-radius: 50px;
+
+    /* ===== CONTACT FORM ===== */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 30px;
     }
+    .contact-form h3 {
+      font-size: 1.1rem;
+      color: #f1f5f9;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #3b82f6, #7c3aed);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.3s;
+    }
+    .submit-btn:hover { opacity: 0.85; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 20px;
+      color: #475569;
+      font-size: 0.82rem;
+    }
+    footer a { color: #3b82f6; text-decoration: none; }
   </style>
 </head>
 <body>
-  <h1>التطبيقات المصرفية للسفر</h1>
+
+<!-- HEADER -->
+<header>
+  <h1>&#x1F4B3; بطاقات السفر المصرفية</h1>
+  <p>Visa Airport &amp; Mastercard Travel Pass</p>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="#cards" class="active">البطاقات</a>
+  <a href="#staff">التواصل مع الموظفين</a>
+  <a href="#requirements">متطلبات الاصدار</a>
+  <a href="#support">خدمة العملاء</a>
+  <a href="index.html">الرئيسية</a>
+</nav>
+
+<!-- CARDS -->
+<div id="cards">
+  <div class="section-title">
+    <h2>&#x2708;&#xFE0F; بطاقاتنا المميزة</h2>
+    <p>اختر البطاقة المناسبة لاحتياجاتك في السفر</p>
+  </div>
   <div class="cards-container">
-    <div class="card visa-card">
+    <div class="bank-card visa-card">
       <div class="icon">&#x2708;&#xFE0F;</div>
-      <h2>Visa Airport</h2>
-      <p>تطبيق فيزا للمطار - استمتع بامتيازات الصالات وخدمات السفر المميزة</p>
+      <h3>Visa Airport</h3>
+      <p>استمتع بامتيازات الصالات وخدمات السفر المميزة حول العالم</p>
       <ul>
         <li>دخول مجاني لصالات المطارات</li>
         <li>اولوية عند تسجيل الوصول</li>
         <li>تامين السفر الشامل</li>
         <li>خصومات على تذاكر الطيران</li>
+        <li>خدمة التوصيل من وإلى المطار</li>
       </ul>
-      <div class="badge">VISA Airport Program</div>
+      <div class="badge">VISA &#x2726; Airport Program</div>
     </div>
-    <div class="card master-card">
+    <div class="bank-card master-card">
       <div class="icon">&#x1F30D;</div>
-      <h2>Mastercard Travel Pass</h2>
-      <p>تطبيق ماستركارد للسفر - رحلات مريحة بمزايا حصرية عالمية</p>
+      <h3>Mastercard Travel Pass</h3>
+      <p>رحلات مريحة بمزايا حصرية عالمية في اكثر من 150 دولة</p>
       <ul>
         <li>مكافات نقاط على كل معاملة</li>
         <li>حماية الشراء والتامين</li>
         <li>صرف عملات بافضل الاسعار</li>
         <li>خدمة عملاء دولية 24/7</li>
+        <li>استرداد نقدي على مشتريات السفر</li>
       </ul>
-      <div class="badge">Mastercard Travel Pass</div>
+      <div class="badge">Mastercard &#x2726; Travel Pass</div>
     </div>
   </div>
-  <a href="index.html" class="back">العودة للرئيسية</a>
+</div>
+
+<!-- STAFF CONTACT -->
+<div id="staff" class="staff-section">
+  <h2>&#x1F464; التواصل مع موظفي البنوك</h2>
+  <p class="sub">تواصل مع المختصين المعتمدين لاصدار بطاقتك</p>
+  <div class="staff-grid">
+
+    <div class="staff-card">
+      <span class="staff-bank visa-label">VISA Airport</span>
+      <h4>احمد العمري</h4>
+      <p class="role">مختص بطاقات فيزا المطار - الفرع الرئيسي</p>
+      <div class="contact-info">
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920001234</div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span> ahmed.visa@bank.com</div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0501234567</div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+      </div>
+    </div>
+
+    <div class="staff-card">
+      <span class="staff-bank visa-label">VISA Airport</span>
+      <h4>سارة المطيري</h4>
+      <p class="role">مستشارة خدمات السفر - بطاقات فيزا</p>
+      <div class="contact-info">
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920001235</div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span> sara.visa@bank.com</div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0507654321</div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+      </div>
+    </div>
+
+    <div class="staff-card">
+      <span class="staff-bank master-label">Mastercard</span>
+      <h4>خالد الشمري</h4>
+      <p class="role">مختص Mastercard Travel Pass - الفرع الرئيسي</p>
+      <div class="contact-info">
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920005678</div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span> khalid.mc@bank.com</div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0509876543</div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+      </div>
+    </div>
+
+    <div class="staff-card">
+      <span class="staff-bank master-label">Mastercard</span>
+      <h4>نورة القحطاني</h4>
+      <p class="role">مستشارة Mastercard للاعمال والسفر</p>
+      <div class="contact-info">
+        <div class="contact-item"><span class="ci">&#x1F4DE;</span> 920005679</div>
+        <div class="contact-item"><span class="ci">&#x1F4E7;</span> noura.mc@bank.com</div>
+        <div class="contact-item"><span class="ci">&#x1F4AC;</span> واتساب: 0503456789</div>
+        <div class="contact-item"><span class="ci">&#x1F553;</span> السبت - الخميس، 8ص - 5م</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- REQUIREMENTS -->
+<div id="requirements" class="req-section">
+  <h2>&#x1F4CB; متطلبات اصدار البطاقات</h2>
+  <p class="sub">احضر هذه الوثائق عند التقديم للحصول على بطاقتك بسرعة</p>
+  <div class="req-grid">
+
+    <div class="req-card visa-req">
+      <h4>&#x2708;&#xFE0F; متطلبات Visa Airport</h4>
+      <ul>
+        <li>الهوية الوطنية سارية المفعول</li>
+        <li>تصريح الاقامة (للمقيمين)</li>
+        <li>كشف حساب بنكي (3 اشهر)</li>
+        <li>شهادة راتب او عمل حر</li>
+        <li>حد ادنى للراتب: 5,000 ريال</li>
+        <li>عمر لا يقل عن 21 سنة</li>
+        <li>صورة شخصية حديثة</li>
+      </ul>
+    </div>
+
+    <div class="req-card master-req">
+      <h4>&#x1F30D; متطلبات Mastercard Travel Pass</h4>
+      <ul>
+        <li>الهوية الوطنية سارية المفعول</li>
+        <li>تصريح الاقامة (للمقيمين)</li>
+        <li>كشف حساب بنكي (6 اشهر)</li>
+        <li>شهادة راتب او اثبات دخل</li>
+        <li>حد ادنى للراتب: 8,000 ريال</li>
+        <li>عمر لا يقل عن 21 سنة</li>
+        <li>جواز سفر ساري (للبطاقة الدولية)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- CUSTOMER SERVICE -->
+<div id="support" class="cs-section">
+  <h2>&#x1F3AF; خدمة العملاء</h2>
+  <p class="sub">نحن هنا لمساعدتك على مدار الساعة - تواصل معنا بالطريقة التي تناسبك</p>
+
+  <div class="cs-grid">
+    <div class="cs-card">
+      <div class="cs-icon">&#x1F4DE;</div>
+      <h4>الهاتف</h4>
+      <p>اتصل بنا مباشرة</p>
+      <div class="cs-value">920000000</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-icon">&#x1F4AC;</div>
+      <h4>واتساب</h4>
+      <p>راسلنا في اي وقت</p>
+      <div class="cs-value">0500000000</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-icon">&#x1F4E7;</div>
+      <h4>البريد الالكتروني</h4>
+      <p>نرد خلال 24 ساعة</p>
+      <div class="cs-value">support@bank.com</div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-icon">&#x1F4CD;</div>
+      <h4>زيارة الفرع</h4>
+      <p>احجز موعدك مسبقا</p>
+      <div class="cs-value">اوقات: 8ص - 5م</div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form">
+    <h3>&#x1F4DD; ارسل استفسارك مباشرة</h3>
+    <div class="form-group">
+      <label>الاسم الكامل</label>
+      <input type="text" placeholder="ادخل اسمك الكامل">
+    </div>
+    <div class="form-group">
+      <label>رقم الجوال</label>
+      <input type="tel" placeholder="05XXXXXXXX">
+    </div>
+    <div class="form-group">
+      <label>البريد الالكتروني</label>
+      <input type="email" placeholder="example@email.com">
+    </div>
+    <div class="form-group">
+      <label>نوع البطاقة المطلوبة</label>
+      <select>
+        <option>اختر البطاقة</option>
+        <option>Visa Airport</option>
+        <option>Mastercard Travel Pass</option>
+        <option>كلتا البطاقتين</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>نوع الاستفسار</label>
+      <select>
+        <option>اختر نوع الاستفسار</option>
+        <option>طلب اصدار بطاقة جديدة</option>
+        <option>الاستفسار عن المتطلبات</option>
+        <option>مشكلة في البطاقة الحالية</option>
+        <option>استفسار عن المميزات</option>
+        <option>اخرى</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>رسالتك</label>
+      <textarea placeholder="اكتب استفسارك او طلبك هنا..."></textarea>
+    </div>
+    <button class="submit-btn">&#x1F4E8; ارسال الاستفسار</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>جميع الحقوق محفوظة &copy; 2026 | <a href="index.html">العودة للرئيسية</a> | <a href="#support">تواصل معنا</a></p>
+</footer>
+
 </body>
 </html>
